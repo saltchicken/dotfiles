@@ -201,6 +201,7 @@ exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 # exec_always --no-startup-id killall polybar
 exec_always --no-startup-id polybar
 
+
 # Color shemes for windows 
 # set $bgcolor    #523d64
 # set $in-bgcolor #363636
