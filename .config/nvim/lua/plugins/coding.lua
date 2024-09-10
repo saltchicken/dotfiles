@@ -105,6 +105,11 @@ return {
 	-- },
 	{
 		"hrsh7th/nvim-cmp",
+		experimental = {
+			ghost_text = {
+				hl_group = "CmpGhostText",
+			},
+		},
 		opts = function(_, opts)
 			opts.completion.autocomplete = false
 			-- opts.mapping["<CR>"] = nil
@@ -145,7 +150,7 @@ return {
 				{ name = "luasnip" },
 				{ name = "buffer" },
 				{ name = "path" },
-				{ name = "emoji" },
+				{ name = "emoji", max_item_count = 2 },
 			}
 		end,
 	},

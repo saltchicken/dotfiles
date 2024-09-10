@@ -191,7 +191,7 @@ bindsym $mod+r mode "resize"
 # }
 
 # exec --no-startup-id /usr/libexec/gsd-xsettings
-# exec --no-startup-id xrandr --output DP-4 --mode 5120x1440
+exec --no-startup-id xrandr --output DP-0 --mode 5120x1440 --rate 165.00
 default_border pixel
 default_floating_border none
 # exec --no-startup-id feh --bg-fill ~/wallpaper.png
@@ -199,8 +199,22 @@ default_floating_border none
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # exec_always --no-startup-id killall polybar
-exec_always --no-startup-id polybar
+exec_always --no-startup-id sh -c "killall polybar; polybar" 
 
+exec_always --no-startup-id i3-msg 'workspace 1; exec kitty --title "FloatingKitty"'
+
+for_window [title="FloatingKitty"] floating enable, resize set 3840 1260, move position 640 90
+
+# exec_always --no-startup-id kitty --role floating_term
+# for_window [window_role=floating_term] floating enable, move to workspace 1
+
+# for_window [class="kitty"] resize set height 600
+# for_window [class="kitty"] floating toggle
+# for_window [class="kitty"] workspace 1 floating enable
+
+# Rule for making the same window normal (non-floating) in other workspaces
+# for_window [class="kitty"] workspace 2 floating disable
+# for_window [class="kitty"] workspace 3 floating disable
 
 # Color shemes for windows 
 # set $bgcolor    #523d64
