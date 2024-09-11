@@ -50,7 +50,7 @@ tiling_drag modifier titlebar
 
 # start a terminal
 
-for_window [title="FloatingKitty"] floating enable, resize set 3840 1260, move position 640 90
+for_window [title="Main Terminal"] floating enable, resize set 3840 1260, move position 640 90, opacity 0.8
 for_window [title="Firefox Terminal Left"] floating enable, resize set 1920 1260, move position 320 90
 for_window [title="Firefox Terminal Right"] floating enable, resize set 1920 1260, move position 3000 90
 bindsym $mod+Return exec kitty
@@ -207,7 +207,7 @@ exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 # exec_always --no-startup-id killall polybar
 exec_always --no-startup-id sh -c "killall polybar; polybar" 
 
-exec_always --no-startup-id i3-msg 'workspace 1; exec kitty --title "FloatingKitty"'
+exec_always --no-startup-id i3-msg 'workspace 1; exec kitty --title "Main Terminal"'
 
 
 # exec_always --no-startup-id kitty --role floating_term
