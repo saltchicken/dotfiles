@@ -51,11 +51,10 @@ tiling_drag modifier titlebar
 # start a terminal
 
 for_window [title="Main Terminal"] floating enable, resize set 3840 1260, move position 640 90, opacity 0.8
-for_window [title="Firefox Terminal Left"] floating enable, resize set 1920 1260, move position 320 90
-for_window [title="Firefox Terminal Right"] floating enable, resize set 1920 1260, move position 3000 90
+for_window [title="Firefox Terminal"] floating enable, resize set 1920 1260, move position 320 90
 bindsym $mod+Return exec kitty
-bindsym $mod+Shift+Return exec kitty --title "Firefox Terminal Right"
-bindsym $mod+Shift+o exec /home/saltchicken/.config/i3/rename_window.sh
+bindsym $mod+Shift+Return exec kitty --title "Firefox Terminal"
+bindsym $mod+Shift+o exec /home/saltchicken/.config/i3/swap_window_position.sh
 # bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
