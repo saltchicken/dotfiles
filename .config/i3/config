@@ -55,6 +55,7 @@ for_window [title="Firefox Terminal"] floating enable, resize set 1920 1260, mov
 bindsym $mod+Return exec kitty
 bindsym $mod+Shift+Return exec kitty --title "Firefox Terminal"
 bindsym $mod+Shift+o exec /home/saltchicken/.config/i3/swap_window_position.sh
+bindsym $mod+Shift+p exec /home/saltchicken/.config/i3/set_picom.sh
 # bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
@@ -203,6 +204,8 @@ default_floating_border none
 # exec --no-startup-id feh --bg-fill ~/wallpaper.png
 # exec --no-startup-id picom
 exec_always --no-startup-id picom --config ~/.config/picom/transparency.conf
+
+
 
 # exec_always --no-startup-id killall polybar
 exec_always --no-startup-id sh -c "killall polybar; polybar" 
