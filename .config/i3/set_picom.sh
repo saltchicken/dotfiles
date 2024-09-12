@@ -3,13 +3,17 @@ current_config=$(ps -ef | grep "picom --config" | grep -v grep | awk -F'/' '{pri
 echo $current_config
 
 if [[ "$current_config" == "transparency" ]]; then
-  killall picom
-  sleep 0.1
+  killall --wait picom
+  while pgrep -x picom >/dev/null; do
+    sleep 0.1
+  done
   picom --config ~/.config/picom/notransparency.conf &
 
 elif [[ "$current_config" == "notransparency" ]]; then
   killall picom
-  sleep 0.1
+  while pgrep -x picom >/dev/null; do
+    sleep 0.1
+  done
   picom --config ~/.config/picom/transparency.conf &
 else
   echo "Didn't find valid picom process"
