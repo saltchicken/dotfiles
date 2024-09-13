@@ -83,8 +83,8 @@ active-opacity = 1.0;
 # frame-opacity = 0.8;
 
 opacity-rule = [
-  "80:class_g *= 'kitty'",
-  # "80:name = 'Main Terminal'",
+# "80:class_g *= 'kitty'",
+ # "80:name = 'Main Terminal'",
 ]
 
 # This one is not working
@@ -306,30 +306,30 @@ use-damage = true;
 #
 # See WINDOW RULES section in the man page for how these work.
 rules: ({
-  match = "window_type = 'tooltip'";
-  fade = false;
-  shadow = true;
-  opacity = 0.75;
-  full-shadow = false;
+ match = "window_type = 'tooltip'";
+ fade = false;
+ shadow = true;
+ opacity = 0.75;
+ full-shadow = false;
 }, {
-  match = "window_type = 'dock'    || "
-          "window_type = 'desktop' || "
-          "_GTK_FRAME_EXTENTS@";
-  blur-background = false;
+ match = "window_type = 'dock'    || "
+         "window_type = 'desktop' || "
+         "_GTK_FRAME_EXTENTS@";
+ blur-background = false;
 }, {
-  match = "window_type != 'dock'";
-  # shader = "my_shader.frag";
+ match = "window_type != 'dock'";
+ # shader = "my_shader.frag";
 }, {
-  match = "window_type = 'dock' || "
-          "window_type = 'desktop'";
-  corner-radius = 0;
+ match = "window_type = 'dock' || "
+         "window_type = 'desktop'";
+ corner-radius = 0;
 }, {
-  match = "name = 'Notification'   || "
-          "class_g = 'Conky'       || "
-          "class_g ?= 'Notify-osd' || "
-          "class_g = 'Cairo-clock' || "
-          "_GTK_FRAME_EXTENTS@";
-  shadow = false;
+ match = "name = 'Notification'   || "
+         "class_g = 'Conky'       || "
+         "class_g ?= 'Notify-osd' || "
+         "class_g = 'Cairo-clock' || "
+         "_GTK_FRAME_EXTENTS@";
+ shadow = false;
 })
 
 # `@include` directive can be used to include additional configuration files.
