@@ -15,6 +15,7 @@ return {
 				"graphql",
 				"http",
 				"java",
+				"lua",
 				"php",
 				"python",
 				"rust",
