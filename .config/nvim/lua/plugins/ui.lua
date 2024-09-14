@@ -120,25 +120,60 @@ return {
 			})
 		end,
 	},
-
-	-- statusline
+	{
+		"vimpostor/vim-tpipeline",
+		lazy = false, -- Ensure it loads without waiting for an event
+		-- init = function()
+		-- 	vim.g.tpipeline_exclude = "lualine" -- Disable tpipeline status line modifications
+		-- end,
+	},
 	{
 		"nvim-lualine/lualine.nvim",
-		opts = function(_, opts)
-			local LazyVim = require("lazyvim.util")
-			opts.sections.lualine_c[4] = {
-				LazyVim.lualine.pretty_path({
-					length = 0,
-					relative = "cwd",
-					modified_hl = "MatchParen",
-					directory_hl = "",
-					filename_hl = "Bold",
-					modified_sign = "",
-					readonly_icon = " 󰌾 ",
-				}),
-			}
+		enabled = false,
+		dependencies = { "vimpostor/vim-tpipeline" }, -- Load tpipeline alongside lualine
+		config = function()
+			require("lualine").setup({
+				options = {
+					theme = "auto",
+				},
+			})
 		end,
 	},
+	-- {
+	-- 	"vimpostor/vim-tpipeline",
+	-- 	lazy = false, -- Make sure it loads without waiting for an event
+	-- },
+	-- {
+	-- 	"nvim-lualine/lualine.nvim",
+	-- 	dependencies = { "vimpostor/vim-tpipeline" }, -- Ensure tpipeline is loaded alongside lualine
+	-- 	config = function()
+	-- 		require("lualine").setup({
+	-- 			options = {
+	-- 				theme = "auto",
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
+	-- statusline
+	--
+	-- { "vimpostor/vim-tpipeline" },
+	-- {
+	-- 	"nvim-lualine/lualine.nvim",
+	-- 	opts = function(_, opts)
+	-- 		local LazyVim = require("lazyvim.util")
+	-- 		opts.sections.lualine_c[4] = {
+	-- 			LazyVim.lualine.pretty_path({
+	-- 				length = 0,
+	-- 				relative = "cwd",
+	-- 				modified_hl = "MatchParen",
+	-- 				directory_hl = "",
+	-- 				filename_hl = "Bold",
+	-- 				modified_sign = "",
+	-- 				readonly_icon = " 󰌾 ",
+	-- 			}),
+	-- 		}
+	-- 	end,
+	-- },
 
 	{
 		"folke/zen-mode.nvim",

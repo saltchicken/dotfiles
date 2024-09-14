@@ -1,6 +1,8 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
+-- keymap.set("n", "<Leader>ys", ":normal! viw<CR> :normal!<CR>ysiw", { noremap = true, silent = true })
+-- keymap.set("v", "<Leader>ys", ":normal! <C-v>viw<CR>", { noremap = true, silent = true })
 -- Do things without affecting the registers
 keymap.set("n", "x", '"_x')
 keymap.set("n", "<Leader>p", '"0p')
