@@ -146,12 +146,24 @@ return {
 			}
 			opts.sources = {
 				{ name = "codeium" },
+				{ name = "custom_source" },
 				{ name = "nvim_lsp" },
 				{ name = "nvim_lua" },
 				{ name = "luasnip" },
 				{ name = "buffer" },
 				{ name = "path" },
 				{ name = "emoji", max_item_count = 2 },
+			}
+			opts.formatting = {
+				format = function(entry, item)
+					item.menu = ({
+						nvim_lsp = "[LSP]",
+						buffer = "[Buffer]",
+						path = "[Path]",
+						custom_source = "[Custom]",
+					})[entry.source.name]
+					return item
+				end,
 			}
 		end,
 	},
