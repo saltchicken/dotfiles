@@ -106,9 +106,10 @@ return {
 	{
 		"hrsh7th/nvim-cmp",
 		experimental = {
-			ghost_text = {
-				hl_group = "CmpGhostText",
-			},
+			ghost_text = true,
+			-- ghost_text = {
+			-- 	hl_group = "CmpGhostText",
+			-- },
 		},
 		opts = function(_, opts)
 			opts.completion.autocomplete = false

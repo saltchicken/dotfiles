@@ -3,7 +3,7 @@ return {
 	{
 		"saltchicken/example_plugin",
 		config = function()
-			require("example_plugin")
+			require("example_plugin").setup()
 		end,
 	},
 }
