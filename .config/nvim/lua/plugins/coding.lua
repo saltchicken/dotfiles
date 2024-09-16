@@ -176,7 +176,29 @@ return {
 		},
 		opts = function(_, opts)
 			opts.completion.autocomplete = false
+			-- 			mapping = cmp.mapping.preset.insert({
+			-- 				["<C-b>"] = cmp.mapping.scroll_docs(-4),
+			-- 				["<C-f>"] = cmp.mapping.scroll_docs(4),
+			-- 				["<C-Space>"] = cmp.mapping.complete(),
+			-- 				["<CR>"] = LazyVim.cmp.confirm({ select = auto_select }),
+			-- 				["<C-y>"] = LazyVim.cmp.confirm({ select = true }),
+			-- 				["<S-CR>"] = LazyVim.cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+			-- 				["<C-CR>"] = function(fallback)
+			-- 					cmp.abort()
+			-- 					fallback()
+			-- 				end,
+			-- 			}),
 			-- opts.mapping["<CR>"] = nil
+			local auto_select = true
+			opts.completion = {
+				completeopt = "menu,menuone,noinsert" .. (auto_select and "" or ",noselect"),
+			}
+			opts.mapping["<Esc>"] = function(fallback)
+				local cmp = require("cmp")
+				-- print("escape pressed")
+				cmp.abort()
+				fallback()
+			end
 			opts.window = {
 				completion = {
 					border = {
@@ -208,13 +230,13 @@ return {
 				},
 			}
 			opts.sources = {
-				{ name = "codeium" },
+				-- { name = "codeium" },
 				{ name = "custom_source" },
-				{ name = "nvim_lsp" },
-				{ name = "nvim_lua" },
-				{ name = "luasnip" },
-				{ name = "buffer" },
-				{ name = "path" },
+				{ name = "nvim_lsp", max_item_count = 2 },
+				{ name = "nvim_lua", max_item_count = 2 },
+				{ name = "luasnip", max_item_count = 2 },
+				{ name = "buffer", max_item_count = 2 },
+				{ name = "path", max_item_count = 2 },
 				{ name = "emoji", max_item_count = 2 },
 			}
 			opts.formatting = {
