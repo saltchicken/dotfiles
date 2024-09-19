@@ -58,6 +58,7 @@ bindsym $mod+Shift+o exec /home/saltchicken/.config/i3/swap_window_position.sh
 # bindsym $mod+Shift+p exec /home/saltchicken/.config/i3/set_picom.sh
 bindsym $mod+Shift+p exec /home/saltchicken/.config/picom/toggle_transparency.sh /home/saltchicken/.config/picom/picom.conf kitty
 
+for_window [class="mpv"] floating enable
 # bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
