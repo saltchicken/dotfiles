@@ -83,8 +83,11 @@ active-opacity = 1.0;
 # frame-opacity = 0.8;
 
 opacity-rule = [
-# "80:class_g *= 'kitty' || class_g *= 'mpv'",
+ # "80:class_g *= 'kitty' || class_g *= 'mpv'",
+# "80:class_g *= 'kitty'",
+ "40:class_g *= 'mpv'"
  # "80:name = 'Main Terminal'",
+ 
 ]
 
 # This one is not working
