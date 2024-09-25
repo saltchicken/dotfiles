@@ -189,10 +189,10 @@ return {
 			-- 				end,
 			-- 			}),
 			-- opts.mapping["<CR>"] = nil
-			local auto_select = true
-			opts.completion = {
-				completeopt = "menu,menuone,noinsert" .. (auto_select and "" or ",noselect"),
-			}
+			-- local auto_select = true
+			-- opts.completion = {
+			-- 	completeopt = "menu,menuone,noinsert" .. (auto_select and "" or ",noselect"),
+			-- }
 			opts.mapping["<Esc>"] = function(fallback)
 				local cmp = require("cmp")
 				-- print("escape pressed")
@@ -230,8 +230,8 @@ return {
 				},
 			}
 			opts.sources = {
-				-- { name = "codeium" },
-				{ name = "custom_source" },
+				{ name = "codeium" },
+				-- { name = "custom_source" },
 				{ name = "nvim_lsp", max_item_count = 2 },
 				{ name = "nvim_lua", max_item_count = 2 },
 				{ name = "luasnip", max_item_count = 2 },
@@ -239,17 +239,17 @@ return {
 				{ name = "path", max_item_count = 2 },
 				{ name = "emoji", max_item_count = 2 },
 			}
-			opts.formatting = {
-				format = function(entry, item)
-					item.menu = ({
-						nvim_lsp = "[LSP]",
-						buffer = "[Buffer]",
-						path = "[Path]",
-						custom_source = "[Custom]",
-					})[entry.source.name]
-					return item
-				end,
-			}
+			-- opts.formatting = {
+			-- 	format = function(entry, item)
+			-- 		item.menu = ({
+			-- 			nvim_lsp = "[LSP]",
+			-- 			buffer = "[Buffer]",
+			-- 			path = "[Path]",
+			-- 			custom_source = "[Custom]",
+			-- 		})[entry.source.name]
+			-- 		return item
+			-- 	end,
+			-- }
 		end,
 	},
 }
