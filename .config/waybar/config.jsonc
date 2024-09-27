@@ -32,19 +32,20 @@
   ],
 
   // Modules Left
-  "modules-left": [
-    "custom/appmenu",
-    "custom/settings",
-    "custom/waybarthemes",
-    "custom/wallpaper",
-    //"wlr/taskbar",
-    // "group/quicklinks",
-    "hyprland/window",
-    "custom/starter",
-  ],
+  // "modules-center": [
+  //   // "custom/appmenu",
+  //   // "custom/settings",
+  //   // "custom/waybarthemes",
+  //   // "custom/wallpaper",
+  //   // "wlr/taskbar",
+  //   // "group/quicklinks",
+  //   "hyprland/window",
+  //   // "custom/starter",
+  // ],
 
+  "modules-center": ["hyprland/window"],
   // Modules Center
-  "modules-center": ["hyprland/workspaces"],
+  "modules-left": ["hyprland/workspaces"],
 
   // Modules Right
   "modules-right": [
@@ -52,15 +53,15 @@
     "pulseaudio",
     //"backlight",
     "bluetooth",
-    "battery",
+    // "battery",
     "network",
     "group/hardware",
     "custom/cliphist",
     // "custom/hypridle",
-    "custom/hyprshade",
+    // "custom/hyprshade",
     "tray",
-    "custom/exit",
-    "custom/ml4w-welcome",
+    // "custom/exit",
+    // "custom/ml4w-welcome",
     "clock",
   ],
 }
