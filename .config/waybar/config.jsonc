@@ -55,6 +55,7 @@
     "bluetooth",
     // "battery",
     "network",
+    "group/gpu",
     "group/hardware",
     "custom/cliphist",
     // "custom/hypridle",

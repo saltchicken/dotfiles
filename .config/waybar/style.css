@@ -163,6 +163,7 @@ window#waybar.empty #window {
 #custom-settings,
 #custom-wallpaper,
 #custom-system,
+#custom-gpu-icon,
 #custom-hyprshade,
 #custom-hypridle,
 #custom-quicklink1,
@@ -282,6 +283,27 @@ window#waybar.empty #window {
   background-color: #dc2f2f;
   color: #ffffff;
 }
+
+/* -----------------------------------------------------
+ * GPU Group
+ * ----------------------------------------------------- */
+
+/* #gpu-stats { */
+/*   margin: 0px; */
+/*   padding: 0px; */
+/*   font-size: 16px; */
+/*   margin-right: 10px; */
+/*   margin-left: 10px; */
+/*   color: @iconcolor; */
+/* } */
+/**/
+/* #gpu { */
+/*   margin-left: 10px; */
+/* } */
+/**/
+/* #gpu-icon { */
+/*   margin-left: 10px; */
+/* } */
 
 /* -----------------------------------------------------
  * Hardware Group
