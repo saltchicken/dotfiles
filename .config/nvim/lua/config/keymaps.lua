@@ -68,3 +68,6 @@ end)
 keymap.set("n", "<leader>i", function()
 	require("craftzdog.lsp").toggleInlayHints()
 end)
+
+-- sudo save a file
+-- keymap.set("c", "w!!", ":SudaWrite<CR>", { silent = true, desc = "Write as Sudo" })
