@@ -65,9 +65,11 @@ keymap.set("n", "<leader>r", function()
 	require("craftzdog.hsl").replaceHexWithHSL()
 end)
 
-keymap.set("n", "<leader>i", function()
-	require("craftzdog.lsp").toggleInlayHints()
-end)
+-- keymap.set("n", "<leader>i", function()
+-- 	require("craftzdog.lsp").toggleInlayHints()
+-- end)
+
+keymap.set("n", "<leader>i", ":CccPick<Return>", opts)
 
 -- sudo save a file
 -- keymap.set("c", "w!!", ":SudaWrite<CR>", { silent = true, desc = "Write as Sudo" })
