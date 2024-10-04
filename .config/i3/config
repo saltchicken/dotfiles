@@ -64,6 +64,8 @@ for_window [class="mpv"] border pixel 0
 # bindsym $mod+Return exec i3-sensible-terminal
 for_window [class="org.wezfurlong.wezterm"] floating enable
 for_window [class="org.wezfurlong.wezterm"] opacity 0.2
+for_window [class="org.wezfurlong.wezterm"] border pixel 0
+
 
 # kill focused window
 bindsym $mod+Shift+q kill
