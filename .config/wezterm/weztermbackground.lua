@@ -15,4 +15,12 @@ config.background = {
 		width = "100%",
 	},
 }
+
+config.window_padding = {
+	left = 0, -- Padding on the left side
+	right = 0, -- Padding on the right side
+	top = 0, -- Padding on the top
+	bottom = 0, -- Padding on the bottom
+}
+
 return config
