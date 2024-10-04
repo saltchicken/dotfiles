@@ -8,3 +8,6 @@ end
 vim.print = _G.dd
 
 require("config.lazy")
+
+-- Disable cursorline. :set nocursorline
+vim.wo.cursorline = false
