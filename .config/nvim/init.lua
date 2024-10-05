@@ -3,7 +3,9 @@ if vim.loader then
 end
 
 _G.dd = function(...)
-	require("util.debug").dump(...)
+	if ... then
+		require("util.debug").dump(...)
+	end
 end
 vim.print = _G.dd
 
