@@ -46,7 +46,8 @@
     # %p - progress value (if set)
     # %n - progress value no extra characters
     # %% - literal %
-    format = "<b>%a</b>\n<i>%s</i>\n%b"
+    # format = "<b>%a</b>\n<i>%s</i>\n%b"
+    format = "%s\n%b"
     # Align message text horizontally
     alignment = center
     # Align message text vertically
@@ -93,7 +94,7 @@
     # Dunst verbosity
     verbosity = mesg
     # Corner radius of dunst
-    corner_radius = 15
+    corner_radius = 5
     # Ignore dbus closeNotification message
     ignore_dbusclose = false
 
