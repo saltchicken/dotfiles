@@ -8,7 +8,7 @@ return {
 		"OctoContributionStats",
 		"OctoRepoStats",
 		"OctoProfile",
-		"OctoRepoWeb", -- Delete this
+		"OctoRepoWeb",
 	},
 	keys = {
 		"<leader>goa",
