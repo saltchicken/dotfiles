@@ -17,6 +17,8 @@ local opts = { noremap = true, silent = true }
 -- keymap.set("v", "<Leader>d", '"_d')
 -- keymap.set("v", "<Leader>D", '"_D')
 
+-- keymap.set("n", "<Leader>E", ":Neotree focus<CR>")
+
 -- Return to Dashboard
 keymap.set("n", "<Leader>d", ":Dashboard<CR>")
 
