@@ -43,10 +43,10 @@ config.background = {
 }
 
 config.window_padding = {
-	left = 0, -- Padding on the left side
-	right = 0, -- Padding on the right side
-	top = 0, -- Padding on the top
-	bottom = 0, -- Padding on the bottom
+	left = 10, -- Padding on the left side
+	right = 10, -- Padding on the right side
+	top = 6, -- Padding on the top
+	bottom = 6, -- Padding on the bottom
 }
 
 local current_background_index = 1
