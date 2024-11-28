@@ -9,12 +9,12 @@
 # Can be set per-window using rules.
 #
 # Default: false
-shadow = true;
+# shadow = true;
 
 # The blur radius for shadows, in pixels.
 #
 # Default: 12
-shadow-radius = 7;
+# shadow-radius = 7;
 
 # The opacity of shadows.
 #
@@ -84,7 +84,7 @@ active-opacity = 1.0;
 
 opacity-rule = [
  # "80:class_g *= 'kitty' || class_g *= 'mpv'",
-# "80:class_g *= 'kitty'",
+ "80:class_g *= 'kitty'",
  "40:class_g *= 'mpv'"
  # "80:name = 'Main Terminal'",
  
@@ -102,8 +102,8 @@ opacity-rule = [
 # blur:
 # {
 #   method = "gaussian";
-#   size = 20; 
-#   deviation = 15;
+#   size = 5; 
+#   deviation = 5;
 # };
 
 # Use fixed inactive dim value, instead of adjusting according to window opacity.
