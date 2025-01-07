@@ -1,4 +1,20 @@
 local wezterm = require("wezterm")
+
+wezterm.on("gui-startup", function(cmd)
+	local screen = wezterm.gui.screens().active
+	local width_ratio = 0.4
+	local height_ratio = 0.7
+	local width, height = screen.width * width_ratio, screen.height * height_ratio
+	local tab, pane, window = wezterm.mux.spawn_window({
+		position = {
+			x = (screen.width - width) / 2,
+			y = (screen.height - height) / 2,
+			origin = "ActiveScreen",
+		},
+	})
+	window:gui_window():set_inner_size(width, height)
+end)
+
 local mux = wezterm.mux
 
 -- wezterm.on("gui-startup", function(cmd)
@@ -32,6 +48,9 @@ config.window_padding = {
 	left = 10,
 	right = 10,
 }
+
+-- config.initial_rows = 60
+-- config.initial_cols = 150
 
 config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 2000 }
 
