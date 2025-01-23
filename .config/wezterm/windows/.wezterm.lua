@@ -17,6 +17,16 @@ end)
 
 local mux = wezterm.mux
 
+-- wezterm.on("update-right-status", function(window, pane)
+-- 	local overrides = window:get_config_overrides() or {}
+-- 	local config = wezterm.config_builder()
+-- 	local scheme = wezterm.get_builtin_color_schemes()[config.color_scheme]
+--
+-- 	if scheme and scheme.background then
+-- 		print("Current background color:", scheme.background)
+-- 	end
+-- end)
+
 -- wezterm.on("gui-startup", function(cmd)
 -- 	local tab, pane, window = mux.spawn_window(cmd or {})
 -- 	window:gui_window():maximize()
@@ -31,8 +41,16 @@ local config = wezterm.config_builder()
 -- }
 -- config.default_domain = "WSL:Ubuntu"
 
+-- config.window_background_image = "C:\\Users\\saltchicken\\Pictures\\ripple_glow.gif"
+-- wezterm.log_info("Background image: " .. config.window_background_image)
+
 config.window_background_opacity = 0.8 -- Adjust this value between 0.0 and 1.0
 config.color_scheme = "Breath (Gogh)"
+
+-- local color_scheme = wezterm.get_builtin_color_schemes()
+-- local selected_scheme = color_scheme["Breath (Gogh)"]
+--
+-- wezterm.log_info(selected_scheme.background)
 
 config.term = "xterm-256color"
 
@@ -118,6 +136,11 @@ config.keys = {
 		key = "n",
 		mods = "LEADER",
 		action = action.ActivateTabRelative(1),
+	},
+	{
+		key = "x",
+		mods = "LEADER",
+		action = wezterm.action.CloseCurrentPane({ confirm = true }),
 	},
 }
 
