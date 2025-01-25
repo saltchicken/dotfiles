@@ -140,7 +140,24 @@ config.keys = {
 	{
 		key = "x",
 		mods = "LEADER",
-		action = wezterm.action.CloseCurrentPane({ confirm = true }),
+		action = action.CloseCurrentPane({ confirm = true }),
+	},
+	{ key = "q", mods = "LEADER", action = action.PaneSelect },
+	-- activate pane selection mode with numeric labels
+	-- {
+	-- 	key = "9",
+	-- 	mods = "LEADER",
+	-- 	action = action.PaneSelect({
+	-- 		alphabet = "1234567890",
+	-- 	}),
+	-- },
+	-- show the pane selection mode, but have it swap the active and selected panes
+	{
+		key = "Q",
+		mods = "LEADER",
+		action = action.PaneSelect({
+			mode = "SwapWithActive",
+		}),
 	},
 }
 
