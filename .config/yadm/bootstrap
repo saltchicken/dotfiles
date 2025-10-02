@@ -1,4 +1,6 @@
-sudo pacman -S gtk4-layer-shell neovim wl-clipboard
+sudo pacman -S gtk4-layer-shell neovim wl-clipboard nautilus rustup
+
+cargo install https://github.com/saltchicken/hyprsnap
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ~/.tmux/plugins/tpm/bin/install_plugins
