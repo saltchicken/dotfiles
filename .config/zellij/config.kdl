@@ -20,6 +20,13 @@ keybinds clear-defaults=true {
         bind "Ctrl l" { MoveFocus "Right"; }
         bind "Alt i" { ToggleFloatingPanes; SwitchToMode "locked"; }
 
+        bind "Ctrl s" {
+            LaunchOrFocusPlugin "session-manager" {
+                floating true
+                move_to_focused_tab true
+            }
+            SwitchToMode "locked"
+        }
     }
     pane {
         bind "left" { MoveFocus "left"; }
