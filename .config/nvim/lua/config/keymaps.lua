@@ -2,10 +2,10 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 -- Horizontal split with a new terminal
-vim.keymap.set("n", "-", "<Cmd>terminal<CR>", { desc = "Open terminal in horizontal split" })
+vim.keymap.set("n", "-", "<Cmd>split<CR>", { desc = "Split window horizontally" })
 
 -- Vertical split with a new terminal
-vim.keymap.set("n", "|", "<Cmd>vertical terminal<CR>", { desc = "Open terminal in vertical split" })
+vim.keymap.set("n", "|", "<Cmd>vsplit<CR>", { desc = "Split window vertically" })
 
 -- Normal mode
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window", silent = true })
