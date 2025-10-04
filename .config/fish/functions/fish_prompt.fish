@@ -18,7 +18,10 @@ function fish_prompt
     echo -n $USER@$hostname
     echo -n ' '
     set_color $color
-    echo -n (pwd)
+
+    set -l display_path (string replace "$HOME" "~" (pwd))
+    echo -n $display_path
+
     set_color normal
 
     echo
