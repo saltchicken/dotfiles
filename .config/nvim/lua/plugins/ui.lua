@@ -27,6 +27,20 @@ return {
       return opts
     end,
   },
+  {
+    "saltchicken/keep.nvim",
+    config = function()
+      local keep = require("keep")
+
+      keep.setup({
+        dir = "~/.master/my-notes/",
+      })
+    end,
+    dependencies = {
+      "folke/snacks.nvim", -- sidebar explorer
+    },
+  },
+
   -- {
   --   "nvim-lualine/lualine.nvim",
   --   config = function(_, opts)
