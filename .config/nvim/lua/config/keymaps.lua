@@ -28,3 +28,18 @@ vim.keymap.set("t", "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Move to right window
 vim.keymap.set("n", "<leader>hp", function()
   Snacks.dashboard()
 end, { desc = "Show Dashboard" })
+
+vim.keymap.set("i", "<C-e>", require("neocodeium").accept)
+vim.keymap.set("i", "<C-f>", require("neocodeium").accept_line)
+vim.keymap.set("i", "<C-Right>", require("neocodeium").accept_word)
+vim.keymap.set("i", "<C-Left>", require("neocodeium").clear)
+vim.keymap.set("i", "<C-Down>", function()
+  require("neocodeium").cycle_or_complete()
+end)
+vim.keymap.set("i", "<C-Up>", function()
+  require("neocodeium").cycle_or_complete(-1)
+end)
+
+-- vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>", {})
+-- vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", {})
+-- vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "[B]uffer [D]elete" })
