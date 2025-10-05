@@ -40,6 +40,13 @@ return {
       "folke/snacks.nvim", -- sidebar explorer
     },
   },
+  {
+    "saltchicken/code-context.nvim",
+    config = function()
+      local code_context = require("code_context")
+      code_context.setup({})
+    end,
+  },
 
   -- {
   --   "nvim-lualine/lualine.nvim",
