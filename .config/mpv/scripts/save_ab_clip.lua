@@ -43,6 +43,8 @@ local function save_ab_clip()
 	local start_str = format_time(a)
 
 	local output = string.format("%s%s_ab_%s.mp4", output_dir, basename, start_str)
+	mp.osd_message("Saving A-B loop")
+	os.execute('notify-send "Saving A-B loop"')
 
 	local res = utils.subprocess({
 		args = {
