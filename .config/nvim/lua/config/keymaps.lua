@@ -40,6 +40,10 @@ vim.keymap.set("i", "<C-Up>", function()
   require("neocodeium").cycle_or_complete(-1)
 end)
 
+vim.keymap.set("n", "<leader>cc", function()
+  vim.cmd("CodeContext --copy")
+end, { desc = "Copy CodeContext", noremap = true, silent = true })
+
 -- vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>", {})
 -- vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", {})
 -- vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "[B]uffer [D]elete" })
