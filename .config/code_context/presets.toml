@@ -11,7 +11,13 @@ include_extensions = ["rs"]
 exclude_patterns = ["target/"]
 include_files_in_tree = ["Cargo.toml", "Cargo.lock"]
 
+[frame_shader]
+include_extensions = ["cpp", "txt", "vert", "frag"]
+include_files_in_tree = ["glad.c"]
+include_extensions_in_tree = ["h", "png"]
+
 [opengl]
 include_extensions = ["cpp", "txt", "vert", "frag"]
 include_files_in_tree = ["glad.c"]
 include_extensions_in_tree = ["h"]
+
