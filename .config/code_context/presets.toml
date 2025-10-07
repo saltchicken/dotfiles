@@ -11,7 +11,7 @@ include = ["*.rs"]
 exclude = ["target"]
 include_in_tree = ["Cargo.toml", "Cargo.lock"]
 
-[frame_shader]
+[frameshader]
 include = ["*.cpp", "*.txt", "*.vert", "*.frag"]
 include_in_tree = ["glad.c", "*.h", "*.png"]
 
