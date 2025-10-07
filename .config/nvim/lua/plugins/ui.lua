@@ -8,6 +8,26 @@ return {
     end,
   },
   {
+    "folke/snacks.nvim",
+    opts = {
+      -- The main configuration table for all pickers
+      picker = {
+        -- Configure the default settings for different sources
+        sources = {
+          -- Here we target the 'explorer' source from the file you found
+          explorer = {
+            -- And finally, we set the option we want to override
+            auto_close = true,
+
+            -- You can override any other explorer setting here too!
+            -- For example:
+            -- follow_file = false,
+          },
+        },
+      },
+    },
+  },
+  {
     "saghen/blink.cmp",
     opts = function(_, opts)
       local completion_toggle = Snacks.toggle({
