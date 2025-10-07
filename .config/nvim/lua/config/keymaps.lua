@@ -48,6 +48,10 @@ vim.keymap.set("n", "<leader>ct", function()
   vim.cmd("CodeContext --tree")
 end, { desc = "Show CodeContext tree", noremap = true, silent = true })
 
+vim.keymap.set("n", "<leader>cs", function()
+  vim.cmd("CodeContextFloat")
+end, { desc = "Show CodeContext tree", noremap = true, silent = true })
+
 -- vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>", {})
 -- vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", {})
 -- vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "[B]uffer [D]elete" })
