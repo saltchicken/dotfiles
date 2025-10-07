@@ -40,7 +40,7 @@ vim.keymap.set("i", "<C-Up>", function()
   require("neocodeium").cycle_or_complete(-1)
 end)
 
-vim.keymap.set("n", "<leader>cx", function()
+vim.keymap.set("n", "<leader>cp", function()
   vim.cmd("CodeContext")
 end, { desc = "Copy CodeContext", noremap = true, silent = true })
 
