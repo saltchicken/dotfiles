@@ -2,6 +2,12 @@ return {
   { "akinsho/bufferline.nvim", enabled = false },
   { "nvim-lualine/lualine.nvim", enabled = false },
   {
+    "brenoprata10/nvim-highlight-colors",
+    config = function()
+      require("nvim-highlight-colors").setup({})
+    end,
+  },
+  {
     "saghen/blink.cmp",
     opts = function(_, opts)
       local completion_toggle = Snacks.toggle({

@@ -16,4 +16,5 @@ return {
       vim.cmd.colorscheme("solarized-osaka")
     end,
   },
+  { "aliqyan-21/darkvoid.nvim" },
 }
