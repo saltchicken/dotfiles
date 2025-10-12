@@ -33,3 +33,7 @@ exclude = ["*.pyc", "__pycache__/", ".venv/"]
 ['gstreaming']
 include = ["*.cpp"]
 exclude = ["node_modules", "dist", "build"]
+
+[fractal]
+include = ["*.cpp", "*.txt"]
+exclude = ["glm/", "imgui/", "build"]
