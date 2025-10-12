@@ -13,7 +13,7 @@ include_in_tree = ["Cargo.toml", "Cargo.lock"]
 
 [frameshader]
 include = ["*.cpp", "*.txt", "*.vert", "*.frag"]
-include_in_tree = ["glad.c", "*.h", "*.png"]
+include_in_tree = ["glad.c", "*.h", "*.png", "*.onnx"]
 
 [opengl]
 include = ["*.cpp", "*.txt", "*.vert", "*.frag"]
@@ -25,3 +25,11 @@ exclude = ["*.pyc", "__pycache__/", ".venv/", "tests"]
 
 ['code-context.nvim']
 include = ["*.lua"]
+
+['font_atlas_generator']
+include = ["*.py", "*.toml"]
+exclude = ["*.pyc", "__pycache__/", ".venv/"]
+
+['gstreaming']
+include = ["*.cpp"]
+exclude = ["node_modules", "dist", "build"]
