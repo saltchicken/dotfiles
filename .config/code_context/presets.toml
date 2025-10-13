@@ -38,3 +38,7 @@ exclude = ["node_modules", "dist", "build"]
 include = ["*.cpp", "*.txt", "*.h", "*.vert", "*.frag", "*.comp"]
 exclude = ["glm/", "imgui/", "build"]
 include_in_tree = ["glad.c", "glad.h"]
+
+[git_code_context]
+include = ["*.py", "*.toml"]
+exclude = ["*.pyc", "__pycache__/", ".venv/", "tests"]
