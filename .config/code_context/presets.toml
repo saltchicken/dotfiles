@@ -35,5 +35,6 @@ include = ["*.cpp"]
 exclude = ["node_modules", "dist", "build"]
 
 [fractal]
-include = ["*.cpp", "*.txt"]
+include = ["*.cpp", "*.txt", "*.h", "*.vert", "*.frag", "*.comp"]
 exclude = ["glm/", "imgui/", "build"]
+include_in_tree = ["glad.c", "glad.h"]
