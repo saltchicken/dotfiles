@@ -1,6 +1,0 @@
-[opener]
-# Add rules as an array of tables. Yazi checks them from top to bottom.
-rules = [
-    { mime = "text/*", run = 'nvim "$@"', block = true, desc = "Edit text file" },
-    # Add other rules below
-]
