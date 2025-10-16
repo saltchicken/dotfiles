@@ -29,6 +29,8 @@ vim.keymap.set("n", "<leader>hp", function()
   Snacks.dashboard()
 end, { desc = "Show Dashboard" })
 
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { noremap = true, silent = true })
+
 vim.keymap.set("i", "<C-e>", require("neocodeium").accept)
 vim.keymap.set("i", "<C-f>", require("neocodeium").accept_line)
 vim.keymap.set("i", "<C-Right>", require("neocodeium").accept_word)
