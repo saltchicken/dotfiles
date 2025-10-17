@@ -30,6 +30,10 @@ vim.keymap.set("n", "<leader>hp", function()
 end, { desc = "Show Dashboard" })
 
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>th", function()
+  local enabled = vim.lsp.inlay_hint.is_enabled({ bufnr = 0 })
+  vim.lsp.inlay_hint.enable(not enabled, { bufnr = 0 })
+end, { desc = "Toggle inlay hints" })
 
 vim.keymap.set("i", "<C-e>", require("neocodeium").accept)
 vim.keymap.set("i", "<C-f>", require("neocodeium").accept_line)
