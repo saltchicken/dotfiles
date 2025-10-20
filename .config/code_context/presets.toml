@@ -44,6 +44,14 @@ include = ["*.py", "*.toml"]
 exclude = ["*.pyc", "__pycache__/", ".venv/", "tests"]
 
 [opengl-template]
-include = ["*.cpp", "*.txt", "*.h", "*.vert", "*.frag", "*.comp", "*.toml"]
+include = ["*.cpp", "*.txt", "*.h", "*.vert", "*.frag", "*.comp", "*.toml", "*.lua"]
 exclude = ["build", "TODO.txt"]
-include_in_tree = ["glad.c", "glad.h", "stb_image.h"]
+include_in_tree = ["glad.c", "glad.h", "stb_image.h", "miniaudio.h", "CMakeLists.txt"]
+
+[pipetest]
+include = ["*.cpp", "*.txt"]
+exclude = ["node_modules", "dist", "build"]
+
+[oxide]
+include = ["*.rs", "*.toml"]
+exclude = ["target", "build"]
