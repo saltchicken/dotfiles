@@ -55,3 +55,8 @@ exclude = ["node_modules", "dist", "build"]
 [oxide]
 include = ["*.rs", "*.toml"]
 exclude = ["target", "build"]
+
+[wgpu-uniforms]
+include = ["*.rs", "*.toml", "*vert", "*.frag", "*.wgsl"]
+exclude = ["target", "build"]
+include_in_tree = ["*.png"]
