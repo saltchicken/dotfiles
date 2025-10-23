@@ -56,7 +56,30 @@ exclude = ["node_modules", "dist", "build"]
 include = ["*.rs", "*.toml"]
 exclude = ["target", "build"]
 
-[wgpu-uniforms]
-include = ["*.rs", "*.toml", "*vert", "*.frag", "*.wgsl"]
+[wasm-gl]
+include = ["*.rs", "*.toml", "*vert", "*.frag", "*.wgsl", "*.html"]
 exclude = ["target", "build"]
 include_in_tree = ["*.png"]
+
+[rust-gl]
+include = ["*.rs", "*.toml", "*vert", "*.frag", "*.wgsl", "*.html"]
+exclude = ["target", "build"]
+include_in_tree = ["*.png"]
+
+
+[wgpu-uniforms]
+include = ["*.rs", "*.toml", "*vert", "*.frag", "*.wgsl", "*.html"]
+exclude = ["target", "build"]
+include_in_tree = ["*.png"]
+
+
+[libinput_hello]
+include = ["*rs", "*.toml"]
+exclude = ["target", "build"]
+
+[python-elgato-streamdeck]
+include = ["*py", "*.toml"]
+
+[delete]
+include = ["*.rs", "*.toml"]
+exclude = ["target", "build"]
