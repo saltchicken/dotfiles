@@ -1,5 +1,19 @@
 return {
-  { "simrat39/rust-tools.nvim" },
+  -- { "mrcjkb/rustaceanvim", enabled = false },
+  -- {
+  --   "simrat39/rust-tools.nvim",
+  --   opts = {
+  --     server = {
+  --       settings = {
+  --         ["rust-analyzer"] = {
+  --           diagnostics = {
+  --             disabled = { "inactive-code" },
+  --           },
+  --         },
+  --       },
+  --     },
+  --   },
+  -- },
   {
     "neovim/nvim-lspconfig",
     opts = {
