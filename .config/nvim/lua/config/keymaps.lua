@@ -25,6 +25,9 @@
 -- vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>k", { desc = "Move to upper window", silent = true })
 -- vim.keymap.set("t", "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Move to right window", silent = true })
 
+vim.keymap.set("x", "p", '"_dP', { desc = "Paste without overwriting clipboard" })
+vim.keymap.set("x", "<C-S-v>", '"_dP', { desc = "Paste (Ctrl+Shift+V) without overwriting clipboard" })
+
 vim.keymap.set("n", "<leader>hp", function()
   Snacks.dashboard()
 end, { desc = "Show Dashboard" })
