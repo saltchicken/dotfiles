@@ -67,7 +67,7 @@ exclude = ["target", "build"]
 include_in_tree = ["*.png"]
 
 
-[wgpu-uniforms]
+[rust-wgpu]
 include = ["*.rs", "*.toml", "*vert", "*.frag", "*.wgsl", "*.html"]
 exclude = ["target", "build"]
 include_in_tree = ["*.png"]
@@ -83,3 +83,9 @@ include = ["*py", "*.toml"]
 [delete]
 include = ["*.rs", "*.toml"]
 exclude = ["target", "build"]
+
+[proclink]
+include = ["*.rs", "*.toml"]
+
+[rust-audio-monitor]
+include = ["*.rs", "*.toml"]
