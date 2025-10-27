@@ -72,6 +72,12 @@ include = ["*.rs", "*.toml", "*vert", "*.frag", "*.wgsl", "*.html"]
 exclude = ["target", "build"]
 include_in_tree = ["*.png"]
 
+[trans-rust-wgpu]
+include = ["*.rs", "*.toml", "*vert", "*.frag", "*.wgsl", "*.html"]
+exclude = ["target", "build"]
+include_in_tree = ["*.png"]
+
+
 
 [libinput_hello]
 include = ["*rs", "*.toml"]
@@ -87,5 +93,5 @@ exclude = ["target", "build"]
 [proclink]
 include = ["*.rs", "*.toml"]
 
-[rust-audio-monitor]
+[pipelink-audio]
 include = ["*.rs", "*.toml"]
