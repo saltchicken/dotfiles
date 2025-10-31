@@ -72,6 +72,11 @@ include = ["*.rs", "*.toml", "*vert", "*.frag", "*.wgsl", "*.html"]
 exclude = ["target", "build"]
 include_in_tree = ["*.png"]
 
+[aetherbox]
+include = ["*.rs", "*.toml", "*vert", "*.frag", "*.wgsl", "*.html"]
+exclude = ["target", "build"]
+include_in_tree = ["*.png"]
+
 [trans-rust-wgpu]
 include = ["*.rs", "*.toml", "*vert", "*.frag", "*.wgsl", "*.html"]
 exclude = ["target", "build"]
@@ -94,4 +99,7 @@ exclude = ["target", "build"]
 include = ["*.rs", "*.toml"]
 
 [pipelink-audio]
+include = ["*.rs", "*.toml"]
+
+[dash]
 include = ["*.rs", "*.toml"]
