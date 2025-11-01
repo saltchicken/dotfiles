@@ -103,3 +103,7 @@ include = ["*.rs", "*.toml"]
 
 [dash]
 include = ["*.rs", "*.toml"]
+
+[projects]
+include = ["*.rs", "*.toml"]
+
