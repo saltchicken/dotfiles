@@ -107,3 +107,6 @@ include = ["*.rs", "*.toml"]
 [projects]
 include = ["*.rs", "*.toml"]
 
+
+[plx]
+include = ["*.rs", "*.toml"]
