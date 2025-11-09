@@ -6,3 +6,5 @@ function fish_greeting
 end
 
 bind \co last_out
+
+fzf --fish | source
