@@ -1,20 +1,21 @@
 return {
   { "akinsho/bufferline.nvim", enabled = false },
   { "nvim-lualine/lualine.nvim", enabled = false },
-  {
-    "nvim-mini/mini.pairs",
-    opts = {
-      modes = { insert = true, command = false, terminal = false },
-      mappings = {
-        ["("] = false,
-        ["{"] = false,
-        ["["] = false,
-        ["'"] = false,
-        ['"'] = false,
-        ["`"] = false,
-      },
-    },
-  },
+  { "nvim-mini/mini.pairs", enabled = false },
+  -- {
+  --   "nvim-mini/mini.pairs",
+  --   opts = {
+  --     modes = { insert = true, command = false, terminal = false },
+  --     mappings = {
+  --       ["("] = false,
+  --       ["{"] = false,
+  --       ["["] = false,
+  --       ["'"] = false,
+  --       ['"'] = false,
+  --       ["`"] = false,
+  --     },
+  --   },
+  -- },
   {
     "brenoprata10/nvim-highlight-colors",
     config = function()
