@@ -110,3 +110,20 @@ include = ["*.rs", "*.toml"]
 
 [plx]
 include = ["*.rs", "*.toml"]
+
+[rust-context]
+include = ["*.rs", "*.toml"]
+
+[kern]
+include = ["*.rs", "*.toml", "*.json", ".cargo/*"]
+
+[blog_os]
+include = ["*.rs", "*.toml", "*.json", ".cargo/*" ]
+exclude = [".github*", "blog*"]
+
+[rim]
+include = ["*.rs", "*.toml"]
+
+[soundboard]
+include = ["*.rs", "*.toml"]
+include_in_tree = ["*.png"]
