@@ -12,6 +12,8 @@ FROM
 WHERE
     -- table_name = 'companies'
     table_name = 'metric_snapshots'
+    -- table_name = 'current_metrics'
+    -- table_name = 'financial_snapshots'
     -- You can also specify the schema if it's not 'public'
     -- AND table_schema = 'public' 
 ORDER BY
