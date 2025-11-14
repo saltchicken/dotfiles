@@ -101,7 +101,7 @@ include = ["*.rs", "*.toml"]
 [pipelink-audio]
 include = ["*.rs", "*.toml"]
 
-[dash]
+[sqledger]
 include = ["*.rs", "*.toml"]
 
 [projects]
@@ -127,3 +127,26 @@ include = ["*.rs", "*.toml"]
 [soundboard]
 include = ["*.rs", "*.toml"]
 include_in_tree = ["*.png"]
+
+[push2_soundboard]
+include = ["*.rs", "*.toml"]
+
+[push2_display]
+include = ["*.rs", "*.toml"]
+
+[push2]
+include = ["*.rs", "*.toml", "*.ron", "*.qml"]
+exclude = ["target", "build", "examples"]
+
+[pushboard]
+include = ["*.rs", "*.toml"]
+
+[trader]
+include = ["*.rs", "*.toml"]
+
+[trader-py]
+include = ["*.py", "*.toml"]
+
+[finnhub_scraper]
+include = ["*.py", "*.toml"]
+
