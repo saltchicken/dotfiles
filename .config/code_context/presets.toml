@@ -156,4 +156,7 @@ include = ["*.rs", "*.toml"]
 [kira-hello]
 include = ["*.rs", "*.toml"]
 
+[pgnotes]
+include = ["*.rs", "*.toml"]
+
 
