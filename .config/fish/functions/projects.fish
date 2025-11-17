@@ -6,6 +6,7 @@ function projects
         cd "$selected_dir"
         clear
         nvim
+        commandline -f repaint
     end
     # If $selected_dir is empty (user pressed 'q'), the function just ends
 end

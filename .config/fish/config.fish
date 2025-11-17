@@ -6,5 +6,6 @@ function fish_greeting
 end
 
 bind \co last_out
+bind \cp projects
 
 fzf --fish | source
