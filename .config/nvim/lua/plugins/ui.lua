@@ -69,19 +69,6 @@ return {
     end,
   },
   {
-    "saltchicken/keep.nvim",
-    config = function()
-      local keep = require("keep")
-
-      keep.setup({
-        dir = "~/.master/my-notes/",
-      })
-    end,
-    dependencies = {
-      "folke/snacks.nvim", -- sidebar explorer
-    },
-  },
-  {
     "saltchicken/code-context.nvim",
     config = function()
       local code_context = require("code_context")
