@@ -7,5 +7,7 @@ end
 
 bind \co last_out
 bind \cp projects
+bind \cs sqledger
+bind \cn pgnotes
 
 fzf --fish | source
