@@ -150,3 +150,10 @@ include = ["*.py", "*.toml"]
 [finnhub_scraper]
 include = ["*.py", "*.toml"]
 
+[emoji-remover]
+include = ["*.rs", "*.toml"]
+
+[kira-hello]
+include = ["*.rs", "*.toml"]
+
+
