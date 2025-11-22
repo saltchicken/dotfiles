@@ -36,6 +36,8 @@ local function save_ab_clip()
 		return
 	end
 
+	local duration = b - a
+
 	local file = mp.get_property("path")
 	local filename = file:match("^.+/(.+)$") or file
 	local basename = filename:gsub("(.+)%..+$", "%1")
@@ -48,14 +50,25 @@ local function save_ab_clip()
 	local res = utils.subprocess({
 		args = {
 			"ffmpeg",
-			"-i",
-			file,
 			"-ss",
 			tostring(a),
-			"-to",
-			tostring(b),
+			"-i",
+			file,
+			"-t",
+			tostring(duration),
+
+			-- Option 1: CPU (Safe default, slightly faster preset)
 			"-c:v",
 			"libx264",
+			"-preset",
+			"fast",
+
+			-- Option 2: NVIDIA GPU (Uncomment if you have Nvidia)
+			-- "-c:v", "h264_nvenc", "-preset", "p7",
+
+			-- Option 3: AMD/INTEL GPU (Uncomment if you have AMD)
+			-- "-c:v", "h264_vaapi",
+
 			"-c:a",
 			"aac",
 			"-y",
