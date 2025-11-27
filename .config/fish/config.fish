@@ -12,4 +12,9 @@ bind \cp projects
 bind \cs sqledger
 bind \cn pgnotes
 
+bind -M insert \co last_out
+bind -M insert \cp projects
+bind -M insert \cs sqledger
+bind -M insert \cn pgnotes
+
 fzf --fish | source
