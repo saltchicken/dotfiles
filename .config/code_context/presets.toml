@@ -20,8 +20,7 @@ include = ["*.cpp", "*.txt", "*.vert", "*.frag"]
 include_in_tree = ["glad.c", "*.h"]
 
 [code_context]
-include = ["*.py", "*.toml"]
-exclude = ["*.pyc", "__pycache__/", ".venv/", "tests"]
+include = ["*.rs", "*.toml"]
 
 ['code-context.nvim']
 include = ["*.lua"]
@@ -91,10 +90,6 @@ exclude = ["target", "build"]
 [python-elgato-streamdeck]
 include = ["*py", "*.toml"]
 
-[delete]
-include = ["*.rs", "*.toml"]
-exclude = ["target", "build"]
-
 [proclink]
 include = ["*.rs", "*.toml"]
 
@@ -104,7 +99,7 @@ include = ["*.rs", "*.toml"]
 [sqledger]
 include = ["*.rs", "*.toml"]
 
-[projects]
+[project-dash]
 include = ["*.rs", "*.toml"]
 
 
@@ -147,6 +142,9 @@ include = ["*.rs", "*.toml"]
 [trader-py]
 include = ["*.py", "*.toml"]
 
+[flux2_gen]
+include = ["*.py", "*.toml"]
+
 [finnhub_scraper]
 include = ["*.py", "*.toml"]
 
@@ -159,4 +157,24 @@ include = ["*.rs", "*.toml"]
 [pgnotes]
 include = ["*.rs", "*.toml"]
 
+[termboard]
+include = ["*.rs", "*.toml"]
 
+[moonlight-android]
+include = ["*.java", "*.toml"]
+
+
+[WatchTestApp]
+include = ["receiver.py", "build.gradle.kts", "AndroidManifest.xml", "MainActivity.kt", "styles.xml"]
+
+[pipewire-explore]
+include = ["*.rs", "*.toml"]
+
+[architect]
+include = ["*.rs", "*.toml"]
+
+[readme_generator]
+include = ["*rs", "*.toml"]
+
+[delete]
+include = ["*rs", "*.toml"]
