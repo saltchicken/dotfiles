@@ -17,6 +17,9 @@ Environment="VIRTUAL_ENV=/home/saltchicken/.local/share/ai-toolkit/.venv"
 # We use the full path to npm (verify with 'which npm' if it fails)
 ExecStart=/usr/bin/npm run build_and_start
 
+KillSignal=SIGINT
+TimeoutStopSec=5
+
 # Restart automatically if it crashes
 Restart=on-failure
 RestartSec=5
