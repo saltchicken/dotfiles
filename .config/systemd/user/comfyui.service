@@ -1,0 +1,25 @@
+[Unit]
+Description=ComfyUI Service
+After=network.target
+
+StartLimitIntervalSec=120
+StartLimitBurst=3
+
+[Service]
+WorkingDirectory=/home/saltchicken/.local/share/ComfyUI
+
+# Set the environment to use the specific local venv
+Environment="PATH=/home/saltchicken/.local/share/ComfyUI/.venv/bin:/usr/local/bin:/usr/bin:/bin"
+Environment="VIRTUAL_ENV=/home/saltchicken/.local/share/ComfyUI/.venv"
+
+# Use the specific python executable from the venv
+ExecStart=/home/saltchicken/.local/share/ComfyUI/.venv/bin/python main.py --listen
+
+Restart=on-failure
+RestartSec=5
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target
