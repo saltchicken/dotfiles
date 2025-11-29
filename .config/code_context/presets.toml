@@ -11,6 +11,10 @@ include = ["*.rs"]
 exclude = ["target"]
 include_in_tree = ["Cargo.toml", "Cargo.lock"]
 
+[python-react]
+include = ["*.py", "*.toml", "*.jsx", "*.html", "*.css", "vite.config.js"]
+
+
 [frameshader]
 include = ["*.cpp", "*.txt", "*.vert", "*.frag"]
 include_in_tree = ["glad.c", "*.h", "*.png", "*.onnx"]
@@ -19,7 +23,7 @@ include_in_tree = ["glad.c", "*.h", "*.png", "*.onnx"]
 include = ["*.cpp", "*.txt", "*.vert", "*.frag"]
 include_in_tree = ["glad.c", "*.h"]
 
-[code_context]
+[code-context]
 include = ["*.rs", "*.toml"]
 
 ['code-context.nvim']
@@ -148,6 +152,11 @@ include = ["*.py", "*.toml"]
 [finnhub_scraper]
 include = ["*.py", "*.toml"]
 
+[facer]
+include = ["*.py", "*.toml", "*.jsx", "*.html", "*.css", "*.js", "*.ts", "*.tsx"]
+
+
+
 [emoji-remover]
 include = ["*.rs", "*.toml"]
 
@@ -178,3 +187,7 @@ include = ["*rs", "*.toml"]
 
 [delete]
 include = ["*rs", "*.toml"]
+
+[sql-context]
+include = ["*.rs", "*.toml"]
+
