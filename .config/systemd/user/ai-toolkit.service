@@ -1,0 +1,29 @@
+[Unit]
+Description=AI Toolkit UI Service
+After=network.target
+StartLimitIntervalSec=120
+StartLimitBurst=3
+
+[Service]
+# The directory where the command runs
+WorkingDirectory=/home/saltchicken/.local/share/ai-toolkit/ui
+
+# Set the environment variables to mimic 'source .venv/bin/activate'
+# We prepend the venv bin directory to the PATH
+Environment="PATH=/home/saltchicken/.local/share/ai-toolkit/.venv/bin:/usr/local/bin:/usr/bin:/bin"
+Environment="VIRTUAL_ENV=/home/saltchicken/.local/share/ai-toolkit/.venv"
+
+# Command to start the application
+# We use the full path to npm (verify with 'which npm' if it fails)
+ExecStart=/usr/bin/npm run build_and_start
+
+# Restart automatically if it crashes
+Restart=on-failure
+RestartSec=5
+#
+# Output logs to the system journal
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target
