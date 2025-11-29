@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=AI-Toolkit Kiosk
+Comment=Start ComfyUI in Kiosk Mode
+# Uses a separate profile directory to keep it isolated
+Exec=/usr/bin/chromium --kiosk --app=http://localhost:8675/ --user-data-dir=%h/.config/chromium-ai-toolkit
+# Icon=io.github.comfyui-community.ComfyUI
+Terminal=false
+Type=Application
+Categories=Graphics;Science;
+StartupWMClass=ai-toolkit-kiosk
