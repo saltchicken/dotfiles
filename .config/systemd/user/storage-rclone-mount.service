@@ -1,0 +1,20 @@
+[Unit]
+Description=Storage Rclone Mount
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=notify
+ExecStart=/usr/bin/rclone mount storage:/mnt/raid %h/.storage \
+    --vfs-cache-mode full \
+    --vfs-cache-max-size 20G \
+    --vfs-read-chunk-size 64M \
+    --no-modtime \
+    --log-level INFO
+
+ExecStop=/bin/fusermount -u %h/.storage
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=default.target
