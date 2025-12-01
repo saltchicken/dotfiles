@@ -91,6 +91,7 @@ return {
       code_context.setup({})
     end,
   },
+  { "saltchicken/emoji-remover.nvim", build = "cargo build --release", cmd = "EmojiClean" },
 
   -- {
   --   "nvim-lualine/lualine.nvim",
