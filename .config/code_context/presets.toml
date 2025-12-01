@@ -12,8 +12,7 @@ exclude = ["target"]
 include_in_tree = ["Cargo.toml", "Cargo.lock"]
 
 [python-react]
-include = ["*.py", "*.toml", "*.jsx", "*.html", "*.css", "vite.config.js"]
-
+include = ["*.py", "*.toml", "*.jsx", "*.html", "*.css", "*.js", "*.ts", "*.tsx"]
 
 [frameshader]
 include = ["*.cpp", "*.txt", "*.vert", "*.frag"]
@@ -33,18 +32,10 @@ include = ["*.lua"]
 include = ["*.py", "*.toml"]
 exclude = ["*.pyc", "__pycache__/", ".venv/"]
 
-['gstreaming']
-include = ["*.cpp"]
-exclude = ["node_modules", "dist", "build"]
-
 [aflames]
 include = ["*.cpp", "*.txt", "*.h", "*.vert", "*.frag", "*.comp", "*.ini"]
 exclude = ["glm/", "imgui/", "build"]
 include_in_tree = ["glad.c", "glad.h"]
-
-[git_code_context]
-include = ["*.py", "*.toml"]
-exclude = ["*.pyc", "__pycache__/", ".venv/", "tests"]
 
 [opengl-template]
 include = ["*.cpp", "*.txt", "*.h", "*.vert", "*.frag", "*.comp", "*.toml", "*.lua"]
@@ -54,26 +45,6 @@ include_in_tree = ["glad.c", "glad.h", "stb_image.h", "miniaudio.h", "CMakeLists
 [pipetest]
 include = ["*.cpp", "*.txt"]
 exclude = ["node_modules", "dist", "build"]
-
-[oxide]
-include = ["*.rs", "*.toml"]
-exclude = ["target", "build"]
-
-[wasm-gl]
-include = ["*.rs", "*.toml", "*vert", "*.frag", "*.wgsl", "*.html"]
-exclude = ["target", "build"]
-include_in_tree = ["*.png"]
-
-[rust-gl]
-include = ["*.rs", "*.toml", "*vert", "*.frag", "*.wgsl", "*.html"]
-exclude = ["target", "build"]
-include_in_tree = ["*.png"]
-
-
-[rust-wgpu]
-include = ["*.rs", "*.toml", "*vert", "*.frag", "*.wgsl", "*.html"]
-exclude = ["target", "build"]
-include_in_tree = ["*.png"]
 
 [aetherbox]
 include = ["*.rs", "*.toml", "*vert", "*.frag", "*.wgsl", "*.html"]
@@ -85,109 +56,16 @@ include = ["*.rs", "*.toml", "*vert", "*.frag", "*.wgsl", "*.html"]
 exclude = ["target", "build"]
 include_in_tree = ["*.png"]
 
-
-
-[libinput_hello]
-include = ["*rs", "*.toml"]
-exclude = ["target", "build"]
-
-[python-elgato-streamdeck]
-include = ["*py", "*.toml"]
-
-[proclink]
-include = ["*.rs", "*.toml"]
-
-[pipelink-audio]
-include = ["*.rs", "*.toml"]
-
-[sqledger]
-include = ["*.rs", "*.toml"]
-
-[project-dash]
-include = ["*.rs", "*.toml"]
-
-
-[plx]
-include = ["*.rs", "*.toml"]
-
-[rust-context]
-include = ["*.rs", "*.toml"]
-
-[kern]
-include = ["*.rs", "*.toml", "*.json", ".cargo/*"]
-
 [blog_os]
 include = ["*.rs", "*.toml", "*.json", ".cargo/*" ]
 exclude = [".github*", "blog*"]
-
-[rim]
-include = ["*.rs", "*.toml"]
-
-[soundboard]
-include = ["*.rs", "*.toml"]
-include_in_tree = ["*.png"]
-
-[push2_soundboard]
-include = ["*.rs", "*.toml"]
-
-[push2_display]
-include = ["*.rs", "*.toml"]
 
 [push2]
 include = ["*.rs", "*.toml", "*.ron", "*.qml"]
 exclude = ["target", "build", "examples"]
 
-[pushboard]
-include = ["*.rs", "*.toml"]
-
-[trader]
-include = ["*.rs", "*.toml"]
-
-[trader-py]
-include = ["*.py", "*.toml"]
-
-[flux2_gen]
-include = ["*.py", "*.toml"]
-
-[finnhub_scraper]
-include = ["*.py", "*.toml"]
-
-[facer]
-include = ["*.py", "*.toml", "*.jsx", "*.html", "*.css", "*.js", "*.ts", "*.tsx"]
-
-
-
-[emoji-remover]
-include = ["*.rs", "*.toml"]
-
-[kira-hello]
-include = ["*.rs", "*.toml"]
-
-[pgnotes]
-include = ["*.rs", "*.toml"]
-
-[termboard]
-include = ["*.rs", "*.toml"]
-
 [moonlight-android]
 include = ["*.java", "*.toml"]
 
-
 [WatchTestApp]
 include = ["receiver.py", "build.gradle.kts", "AndroidManifest.xml", "MainActivity.kt", "styles.xml"]
-
-[pipewire-explore]
-include = ["*.rs", "*.toml"]
-
-[architect]
-include = ["*.rs", "*.toml"]
-
-[readme_generator]
-include = ["*rs", "*.toml"]
-
-[delete]
-include = ["*rs", "*.toml"]
-
-[sql-context]
-include = ["*.rs", "*.toml"]
-
