@@ -7,16 +7,16 @@ end
 
 fish_vi_key_bindings
 
-bind \co last_out
-bind \cp projects
-bind \cs sqledger
-bind \cn pgnotes
-bind \cy systemd-tui-monitor
+bind \eo last_out
+bind \ep projects
+bind \ed sqledger
+bind \en pgnotes
+bind \em systemd-tui-monitor
 
-bind -M insert \co last_out
-bind -M insert \cp projects
-bind -M insert \cs sqledger
-bind -M insert \cn pgnotes
-bind -M insert \cy systemd-tui-monitor
+bind -M insert \eo last_out
+bind -M insert \ep projects
+bind -M insert \ed sqledger
+bind -M insert \en pgnotes
+bind -M insert \em systemd-tui-monitor
 
 fzf --fish | source
