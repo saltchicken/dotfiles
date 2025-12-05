@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=Facer
+Comment=Start Facer in Kiosk Mode
+# Uses a separate profile directory to keep it isolated
+Exec=/usr/bin/chromium --kiosk --app=http://localhost:8470/ --user-data-dir=%h/.config/chromium-ai-toolkit
+Terminal=false
+Type=Application
+Categories=Graphics;Science;
+StartupWMClass=facer-kiosk
+
