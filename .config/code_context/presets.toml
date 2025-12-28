@@ -25,6 +25,9 @@ include_in_tree = ["glad.c", "*.h"]
 [code-context]
 include = ["*.rs", "*.toml"]
 
+[ComfyUI-Prompter]
+include = ["*.py", "*.json"]
+
 ['code-context.nvim']
 include = ["*.lua"]
 
@@ -68,4 +71,7 @@ exclude = ["target", "build", "examples"]
 include = ["*.java", "*.toml"]
 
 [WatchTestApp]
-include = ["receiver.py", "build.gradle.kts", "AndroidManifest.xml", "MainActivity.kt", "styles.xml"]
+include = ["*receiver.py", "*build.gradle.kts", "*AndroidManifest.xml", "*MainActivity.kt", "*styles.xml"]
+
+[runpod_runner]
+include = ["*.py", "start.sh", "Dockerfile", "*.toml", ".dockerignore"]
