@@ -20,6 +20,23 @@ return {
       diagnostics = {
         virtual_text = false, -- always off
         virtual_lines = true, -- start with under-line diagnostics
+        disable = { "report-undefined-" },
+      },
+      -- NEW: Add the servers configuration here
+      servers = {
+        pyright = {
+          settings = {
+            python = {
+              analysis = {
+                typeCheckingMode = "basic",
+                diagnosticSeverityOverrides = {
+                  reportMissingImports = "none",
+                  reportUndefinedVariable = "none",
+                },
+              },
+            },
+          },
+        },
       },
     },
     keys = {
