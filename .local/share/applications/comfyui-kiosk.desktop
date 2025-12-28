@@ -1,5 +1,5 @@
 [Desktop Entry]
-Version=1.0
+Version=2.0
 Name=ComfyUI Kiosk
 Comment=Start ComfyUI in Kiosk Mode
 # Uses a separate profile directory to keep it isolated
