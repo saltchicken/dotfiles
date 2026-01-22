@@ -26,7 +26,7 @@ include_in_tree = ["glad.c", "*.h"]
 include = ["*.rs", "*.toml"]
 
 [ComfyUI-Prompter]
-include = ["*.py", "*.json"]
+include = ["*.py", "*.json", "*.js"]
 
 ['code-context.nvim']
 include = ["*.lua"]
@@ -75,3 +75,7 @@ include = ["*receiver.py", "*build.gradle.kts", "*AndroidManifest.xml", "*MainAc
 
 [runpod_runner]
 include = ["*.py", "start.sh", "Dockerfile", "*.toml", ".dockerignore"]
+
+[midi-model]
+include = ["*.py", "*.sh"]
+include_in_tree = ["*.safetensors", "*.json", "MIDI.py"]
