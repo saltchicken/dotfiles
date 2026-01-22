@@ -11,14 +11,21 @@ vim.opt.laststatus = 0
 -- })
 
 vim.filetype.add({
-  extension = {
-    wgsl = "wgsl",
-  },
+	extension = {
+		wgsl = "wgsl",
+	},
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "wgsl",
-  callback = function()
-    vim.bo.commentstring = "// %s"
-  end,
+	pattern = "wgsl",
+	callback = function()
+		vim.bo.commentstring = "// %s"
+	end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "tidal",
+	callback = function()
+		vim.bo.commentstring = "-- %s"
+	end,
 })
