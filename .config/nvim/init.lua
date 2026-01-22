@@ -3,6 +3,8 @@ require("config.lazy")
 
 vim.opt.laststatus = 0
 
+vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
 -- vim.api.nvim_create_autocmd("TermOpen", {
 --   pattern = "*",
 --   callback = function()
