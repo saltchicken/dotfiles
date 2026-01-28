@@ -1,13 +1,15 @@
 -- save_ab_clip_combined.lua
--- Press Ctrl+s to save current A-B loop
+-- Press Ctrl+s to save current A-B loop (Video)
+-- Press Ctrl+Shift+s to save current A-B loop (Audio Only)
 
 local utils = require("mp.utils")
 local msg = require("mp.msg")
 
--- Ensure ~/Videos/loops exists
 local home = os.getenv("HOME")
-local output_dir = home .. "/Videos/loops/"
-os.execute("mkdir -p " .. output_dir)
+local video_dir = home .. "/Videos/loops/"
+local audio_dir = home .. "/Music/loops/"
+os.execute("mkdir -p " .. video_dir)
+os.execute("mkdir -p " .. audio_dir)
 
 -- Format time as hh-mm-ss
 local function format_time(seconds)
@@ -29,63 +31,81 @@ local function get_ab_range()
 	end
 end
 
--- Save normal A-B clip
-local function save_ab_clip()
+local function save_loop(is_audio)
 	local a, b = get_ab_range()
 	if not a then
 		return
 	end
 
 	local duration = b - a
-
 	local file = mp.get_property("path")
 	local filename = file:match("^.+/(.+)$") or file
 	local basename = filename:gsub("(.+)%..+$", "%1")
 	local start_str = format_time(a)
 
-	local output = string.format("%s%s_ab_%s.mp4", output_dir, basename, start_str)
-	mp.osd_message("Saving A-B loop")
-	os.execute('notify-send "Saving A-B loop"')
+	-- ‼️ Determine extension, directory, and label based on mode
+	local ext = is_audio and "mp3" or "mp4"
+	local type_label = is_audio and "Audio" or "Clip"
+	local suffix = is_audio and "_audio_" or "_ab_"
+	local output_dir = is_audio and audio_dir or video_dir
 
-	local res = utils.subprocess({
-		args = {
-			"ffmpeg",
-			"-ss",
-			tostring(a),
-			"-i",
-			file,
-			"-t",
-			tostring(duration),
+	local output = string.format("%s%s%s%s.%s", output_dir, basename, suffix, start_str, ext)
 
-			-- Option 1: CPU (Safe default, slightly faster preset)
-			"-c:v",
-			"libx264",
-			"-preset",
-			"fast",
+	mp.osd_message("Saving " .. type_label .. " loop...")
+	os.execute('notify-send "Saving ' .. type_label .. ' loop"')
 
-			-- Option 2: NVIDIA GPU (Uncomment if you have Nvidia)
-			-- "-c:v", "h264_nvenc", "-preset", "p7",
+	-- Base ffmpeg arguments
+	local args = {
+		"ffmpeg",
+		"-ss",
+		tostring(a),
+		"-i",
+		file,
+		"-t",
+		tostring(duration),
+	}
 
-			-- Option 3: AMD/INTEL GPU (Uncomment if you have AMD)
-			-- "-c:v", "h264_vaapi",
+	-- ‼️ Branching logic for codec selection
+	if is_audio then
+		-- Audio Only: No video, encode to MP3 (VBR quality 2)
+		table.insert(args, "-vn")
+		table.insert(args, "-c:a")
+		table.insert(args, "libmp3lame")
+		table.insert(args, "-q:a")
+		table.insert(args, "2")
+	else
+		-- Video Clip: Original encoding settings
+		table.insert(args, "-c:v")
+		table.insert(args, "libx264")
+		table.insert(args, "-preset")
+		table.insert(args, "fast")
+		table.insert(args, "-c:a")
+		table.insert(args, "aac")
+	end
 
-			"-c:a",
-			"aac",
-			"-y",
-			output,
-		},
-		cancellable = false,
-	})
+	table.insert(args, "-y")
+	table.insert(args, output)
+
+	local res = utils.subprocess({ args = args, cancellable = false })
 
 	if res.status == 0 then
-		mp.osd_message("Saved A-B loop to " .. output)
-		os.execute('notify-send "Saved A-B loop to ' .. output .. '"')
+		mp.osd_message("Saved " .. type_label .. " to " .. output)
+		os.execute('notify-send "Saved ' .. type_label .. " to " .. output .. '"')
 	else
-		mp.osd_message("Failed to save clip! See console.")
-		os.execute('notify-send "Failed to save clip! See console."')
+		mp.osd_message("Failed to save! See console.")
+		os.execute('notify-send "Failed to save! See console."')
 		msg.error(res.error)
 	end
 end
 
+local function save_video_clip()
+	save_loop(false)
+end
+
+local function save_audio_clip()
+	save_loop(true)
+end
+
 -- Key bindings
-mp.add_key_binding("Ctrl+s", save_ab_clip)
+mp.add_key_binding("Ctrl+s", save_video_clip)
+mp.add_key_binding("Ctrl+Shift+s", save_audio_clip)
