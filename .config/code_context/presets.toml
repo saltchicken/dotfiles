@@ -79,3 +79,14 @@ include = ["*.py", "start.sh", "Dockerfile", "*.toml", ".dockerignore"]
 [midi-model]
 include = ["*.py", "*.sh"]
 include_in_tree = ["*.safetensors", "*.json", "MIDI.py"]
+
+[periodic-table-local]
+include = ["*.html", "*.css", ".txt", "*.js"]
+include_in_tree = ["*.gif", "*.zip", "*.log", "*.lst"]
+
+[periodic-table]
+include = ["*.py", "*.toml", "*.jsx", "*.html", "*.css", "*.js", "*.ts", "*.tsx"]
+
+[qwen3-docker]
+include = ["*.py", "start.sh", "Dockerfile", "*.toml", ".dockerignore", "*.yml"]
+
