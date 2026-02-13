@@ -1,0 +1,26 @@
+/* ‼️ Libadwaita Variable Overrides */
+@define-color window_bg_color #2e3440;
+@define-color window_fg_color #eceff4;
+
+/* ‼️ This specifically targets the Sidebar colors */
+@define-color sidebar_bg_color #242933;
+@define-color sidebar_fg_color #eceff4;
+@define-color sidebar_backdrop_color #242933;
+
+/* ‼️ These handle the view area (where your files are) */
+@define-color view_bg_color #2e3440;
+@define-color view_fg_color #eceff4;
+
+/* ‼️ Accent colors for folders/selection */
+@define-color accent_color #5e81ac;
+@define-color accent_bg_color #5e81ac;
+
+/* Keeping your class overrides just in case */
+window {
+    background-color: @window_bg_color;
+    color: @window_fg_color;
+}
+
+.sidebar {
+    background-color: @sidebar_bg_color;
+}
