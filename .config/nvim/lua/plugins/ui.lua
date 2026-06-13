@@ -76,4 +76,18 @@ return {
       vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
     end,
   },
+  {
+    "NvChad/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup({
+        user_default_options = {
+          RGB = true, -- #RGB hex codes
+          RRGGBB = true, -- #RRGGBB hex codes
+          names = false, -- "Name" codes like Blue or Red
+          css = true, -- Enable all CSS features: rgb(), hsl(), etc.
+          mode = "virtualtext", -- Set to "background" to color the text background instead
+        },
+      })
+    end,
+  },
 }
