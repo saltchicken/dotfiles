@@ -5,6 +5,10 @@ return {
     priority = 1000,
     opts = {
       transparent = true,
+      terminal_colors = true,
+      styles = {
+        floats = "transparent",
+      },
       on_highlights = function(hl, c)
         hl.CursorLine = { bg = "#1E2229" }
         hl.Folded = { bg = "#1E2229" }
@@ -19,5 +23,12 @@ return {
     opts = {
       colorscheme = "solarized-osaka",
     },
+  },
+  {
+    "OXY2DEV/markview.nvim",
+    lazy = false,
+
+    -- Completion for `blink.cmp`
+    -- dependencies = { "saghen/blink.cmp" },
   },
 }
