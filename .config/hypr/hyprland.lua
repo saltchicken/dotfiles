@@ -140,7 +140,7 @@ hl.config({
 
 hl.config({
 	animations = {
-		enabled = true,
+		enabled = false,
 		-- Default curves, see https://wiki.hypr.land/Configuring/Animations/#curves
 		--        NAME,           X0,   Y0,   X1,   Y1
 		-- Default animations, see https://wiki.hypr.land/Configuring/Animations/
@@ -318,12 +318,10 @@ hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "l", hl.dsp.layout("swapprev"))
 hl.bind(mainMod .. " + " .. "O", hl.dsp.layout("orientationcycle right center"))
 
 -- Triggers "Fake Fullscreen" (App thinks it's fullscreen, Hyprland keeps it tiled)
-
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "F", hl.dsp.window.fullscreen_state("0 2"))
+hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "F", hl.dsp.window.fullscreen_state({ internal = 0, client = 2 }))
 
 -- Reverts the window back to its normal state
-
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "N", hl.dsp.window.fullscreen_state("0 0"))
+hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "N", hl.dsp.window.fullscreen_state({ internal = 0, client = 0 }))
 
 -- Move focus with mainMod + arrow keys
 
