@@ -272,6 +272,11 @@ hl.device({
 	active_area_size = { 152, 85.5 },
 })
 
+hl.device({
+	name = "wacom-cintiq-16-pen",
+	output = "HDMI-A-2",
+})
+
 --##################
 
 --## KEYBINDINGS ###
