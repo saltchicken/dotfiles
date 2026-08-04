@@ -22,6 +22,13 @@ hl.monitor({
 	scale = 1,
 })
 
+hl.monitor({
+	output = "HDMI-A-2",
+	mode = "1920x1080@60",
+	position = "-5120x0",
+	scale = 1,
+})
+
 hl.workspace_rule({
 	workspace = 9,
 	monitor = "VIRTUAL-1",
@@ -102,7 +109,7 @@ hl.config({
 		-- Set to true enable resizing windows by clicking and dragging on borders and gaps
 		resize_on_border = false,
 		-- Please see https://wiki.hypr.land/Configuring/Tearing/ before you turn this on
-		allow_tearing = false,
+		allow_tearing = true,
 		layout = "master",
 		col = {
 			active_border = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
@@ -145,6 +152,12 @@ hl.config({
 		--        NAME,           X0,   Y0,   X1,   Y1
 		-- Default animations, see https://wiki.hypr.land/Configuring/Animations/
 		--           NAME,          ONOFF, SPEED, CURVE,        [STYLE]
+	},
+})
+
+hl.config({
+	render = {
+		direct_scanout = true,
 	},
 })
 
@@ -590,6 +603,7 @@ hl.window_rule({
 	},
 	float = true,
 	center = true,
+	immediate = true,
 })
 
 -- Autostart
