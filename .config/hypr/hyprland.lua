@@ -342,7 +342,11 @@ hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "l", hl.dsp.layout("swapprev"))
 
 hl.bind(mainMod .. " + " .. "O", hl.dsp.layout("orientationcycle right center"))
 
+-- False Fullscreen state
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen_state({ internal = 0, client = 2, action = "toggle" }))
+
+-- Toggle off Wacom
+hl.bind(mainMod .. " + ALT + 0", hl.dsp.dpms({ action = "toggle", monitor = "HDMI-A-2" }))
 
 -- Move focus with mainMod + arrow keys
 
