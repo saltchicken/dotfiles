@@ -594,26 +594,61 @@ hl.window_rule({
 	center = true,
 })
 
-hl.window_rule({
-	name = "float-all-freecad",
-	match = {
-		class = "^(org.freecad.FreeCAD)$",
-	},
-	float = true,
-	center = true,
-})
+--################################
 
-hl.window_rule({
-	name = "float-all-krita",
-	match = {
-		class = "^(krita)$",
-	},
-	float = true,
-	center = true,
-	immediate = true,
-})
+--## FLOATING WINDOW EXCEPTIONS ##
 
--- Autostart
+--################################
+
+-- 1. Define the problematic applications
+local popup_apps = {
+	"krita",
+	"org.freecad.FreeCAD",
+}
+
+-- 2. Define common keywords found in popup/dialog titles
+local popup_titles = {
+	"Preferences",
+	"Settings",
+	"Save",
+	"Open",
+	"Export",
+	"Import",
+	"Warning",
+	"Error",
+	"Confirm",
+	"Choose",
+	"Color Selector",
+	"Brush",
+	"Layer",
+	"New Document",
+	"Print",
+	"Properties",
+}
+
+-- 3. Loop through both tables to generate rules dynamically
+for _, app in ipairs(popup_apps) do
+	for _, title in ipairs(popup_titles) do
+		hl.window_rule({
+			name = "float-" .. app .. "-dialog-" .. title,
+			match = {
+				class = "^" .. app .. "$",
+				title = ".*" .. title .. ".*", -- Matches if the title contains the keyword
+			},
+			float = true,
+			center = true,
+			-- Optional: you can also set a max size for these popups
+			-- size = { 800, 600 }
+		})
+	end
+end
+
+--################################
+
+--## Autostart ##
+
+--################################
+
 hl.on("hyprland.start", function()
 	hl.exec_cmd("hyprpaper")
 	hl.exec_cmd("[workspace special:magic silent] kitty --class magic-term")
