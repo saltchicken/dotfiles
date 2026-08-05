@@ -32,6 +32,13 @@ hl.monitor({
 hl.workspace_rule({
 	workspace = 9,
 	monitor = "VIRTUAL-1",
+	default = true,
+})
+
+hl.workspace_rule({
+	workspace = 10,
+	monitor = "HDMI-A-2",
+	default = true,
 })
 
 --##################
@@ -304,7 +311,7 @@ local mainMod = "SUPER"
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Binds/ for more
 
-hl.bind(mainMod .. " + " .. "RETURN", hl.dsp.exec_cmd("kitty"))
+hl.bind(mainMod .. " + " .. "RETURN", hl.dsp.exec_cmd(terminal))
 
 hl.bind(mainMod .. " + " .. "Q", hl.dsp.window.close())
 
@@ -313,11 +320,11 @@ hl.bind(
 	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit")
 )
 
-hl.bind(mainMod .. " + " .. "E", hl.dsp.exec_cmd("dolphin"))
+hl.bind(mainMod .. " + " .. "E", hl.dsp.exec_cmd(fileManager))
 
 hl.bind(mainMod .. " + " .. "V", hl.dsp.window.float())
 
-hl.bind(mainMod .. " + " .. "SPACE", hl.dsp.exec_cmd("fuzzel"))
+hl.bind(mainMod .. " + " .. "SPACE", hl.dsp.exec_cmd(menu))
 
 hl.bind(mainMod .. " + " .. "P", hl.dsp.window.pseudo())
 
@@ -335,11 +342,7 @@ hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "l", hl.dsp.layout("swapprev"))
 
 hl.bind(mainMod .. " + " .. "O", hl.dsp.layout("orientationcycle right center"))
 
--- Triggers "Fake Fullscreen" (App thinks it's fullscreen, Hyprland keeps it tiled)
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "F", hl.dsp.window.fullscreen_state({ internal = 0, client = 2 }))
-
--- Reverts the window back to its normal state
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "N", hl.dsp.window.fullscreen_state({ internal = 0, client = 0 }))
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen_state({ internal = 0, client = 2, action = "toggle" }))
 
 -- Move focus with mainMod + arrow keys
 
