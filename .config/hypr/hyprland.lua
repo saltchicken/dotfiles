@@ -594,54 +594,53 @@ hl.window_rule({
 	center = true,
 })
 
---################################
+--###############################
+--## STATEFUL FLOATING LOGIC   ##
+--###############################
 
---## FLOATING WINDOW EXCEPTIONS ##
-
---################################
-
--- 1. Define the problematic applications
-local popup_apps = {
-	"krita",
-	"org.freecad.FreeCAD",
+local single_instance_apps = {
+	["org.freecad.FreeCAD"] = true,
+	["krita"] = true,
 }
 
--- 2. Define common keywords found in popup/dialog titles
-local popup_titles = {
-	"Preferences",
-	"Settings",
-	"Save",
-	"Open",
-	"Export",
-	"Import",
-	"Warning",
-	"Error",
-	"Confirm",
-	"Choose",
-	"Color Selector",
-	"Brush",
-	"Layer",
-	"New Document",
-	"Print",
-	"Properties",
-}
+-- Table to store our internal counts
+local app_window_counts = {}
 
--- 3. Loop through both tables to generate rules dynamically
-for _, app in ipairs(popup_apps) do
-	for _, title in ipairs(popup_titles) do
-		hl.window_rule({
-			name = "float-" .. app .. "-dialog-" .. title,
-			match = {
-				class = "^" .. app .. "$",
-				title = ".*" .. title .. ".*", -- Matches if the title contains the keyword
-			},
-			float = true,
-			center = true,
-			-- Optional: you can also set a max size for these popups
-			-- size = { 800, 600 }
-		})
+-- Event: Window Opens
+hl.on("window.open", function(window)
+	if not window or not window.class then
+		return
 	end
-end
+
+	local class = window.class
+
+	if single_instance_apps[class] then
+		-- Increment the count (or initialize to 1 if it doesn't exist yet)
+		app_window_counts[class] = (app_window_counts[class] or 0) + 1
+
+		-- If count is greater than 1, it's a popup
+		if app_window_counts[class] > 1 then
+			hl.exec_cmd("hyprctl dispatch setfloating")
+			hl.exec_cmd("hyprctl dispatch centerwindow")
+		end
+	end
+end)
+
+-- Event: Window Closes
+hl.on("window.close", function(window)
+	if not window or not window.class then
+		return
+	end
+
+	local class = window.class
+
+	if single_instance_apps[class] then
+		-- Decrement the count safely
+		if app_window_counts[class] and app_window_counts[class] > 0 then
+			app_window_counts[class] = app_window_counts[class] - 1
+		end
+	end
+end)
 
 --################################
 
