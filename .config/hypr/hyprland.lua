@@ -348,6 +348,8 @@ hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen_state({ internal = 0
 -- Toggle off Wacom
 hl.bind(mainMod .. " + ALT + 0", hl.dsp.dpms({ action = "toggle", monitor = "HDMI-A-2" }))
 
+hl.bind(mainMod .. " + ALT + 1", hl.dsp.dpms({ action = "toggle", monitor = "DP-3" }))
+
 -- Move focus with mainMod + arrow keys
 
 hl.bind(mainMod .. " + " .. "h", hl.dsp.focus({ direction = "left" }))
