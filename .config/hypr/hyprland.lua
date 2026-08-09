@@ -350,6 +350,8 @@ hl.bind(mainMod .. " + ALT + 0", hl.dsp.dpms({ action = "toggle", monitor = "HDM
 
 hl.bind(mainMod .. " + ALT + 1", hl.dsp.dpms({ action = "toggle", monitor = "DP-3" }))
 
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("sketchlayer"))
+
 -- Move focus with mainMod + arrow keys
 
 hl.bind(mainMod .. " + " .. "h", hl.dsp.focus({ direction = "left" }))
