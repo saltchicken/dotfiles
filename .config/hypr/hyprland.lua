@@ -352,6 +352,11 @@ hl.bind(mainMod .. " + ALT + 1", hl.dsp.dpms({ action = "toggle", monitor = "DP-
 
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("sketchlayer"))
 
+hl.bind(
+	mainMod .. " + SHIFT + P",
+	hl.dsp.exec_cmd("sh -c 'grim -g \"$(slurp)\" ~/Pictures/screenshot-$(date +%F-%H%M%S).png'")
+)
+
 -- Move focus with mainMod + arrow keys
 
 hl.bind(mainMod .. " + " .. "h", hl.dsp.focus({ direction = "left" }))
@@ -596,6 +601,17 @@ hl.window_rule({
 	},
 	float = true,
 	center = true,
+})
+
+hl.window_rule({
+	name = "krita-no-decoration",
+	match = {
+		class = "^krita$",
+	},
+	border_size = 0,
+	rounding = 0,
+	decorate = false,
+	no_shadow = true,
 })
 
 --###############################
