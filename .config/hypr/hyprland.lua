@@ -612,6 +612,7 @@ hl.window_rule({
 	rounding = 0,
 	decorate = false,
 	no_shadow = true,
+	-- opacity = 0.5,
 })
 
 --###############################
