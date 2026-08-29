@@ -40,8 +40,11 @@ return {
   {
     "grddavies/tidal.nvim",
     opts = {
-      -- Your configuration here
-      -- See configuration section for defaults
+      boot = {
+        tidal = {
+          file = vim.fn.expand("~/.config/tidal/BootTidal.hs"),
+        },
+      },
     },
     -- Recommended: Install TreeSitter parsers for Haskell and SuperCollider
     dependencies = {
