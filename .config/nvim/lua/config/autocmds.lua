@@ -14,3 +14,11 @@ vim.api.nvim_create_autocmd("TermOpen", {
     vim.cmd("hide")
   end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "mmn",
+  callback = function(args)
+    -- Start Neovim's native tree-sitter highlighting
+    vim.treesitter.start(args.buf, "mmn")
+  end,
+})
