@@ -22,3 +22,11 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.treesitter.start(args.buf, "mmn")
   end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "mmn",
+  callback = function(args)
+    vim.treesitter.start(args.buf, "mmn")
+    vim.bo[args.buf].commentstring = "// %s"
+  end,
+})
