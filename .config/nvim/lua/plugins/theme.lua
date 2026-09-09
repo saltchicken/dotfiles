@@ -14,6 +14,9 @@ return {
         hl.Folded = { bg = "#1E2229" }
         hl.StatusLine = { bg = "#1E2229" }
         hl.StatusLineNC = { bg = "#1E2229" }
+
+        hl["@function.macro"] = { fg = c.magenta, italic = true }
+        hl["@variable.mmn"] = { fg = c.blue }
       end,
     },
   },
