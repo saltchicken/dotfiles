@@ -608,6 +608,15 @@ hl.window_rule({
 })
 
 hl.window_rule({
+	name = "frameshader",
+	match = {
+		title = "^frameshader$",
+	},
+	float = true,
+	center = true,
+})
+
+hl.window_rule({
 	name = "krita-no-decoration",
 	match = {
 		class = "^krita$",
