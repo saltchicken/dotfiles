@@ -330,7 +330,7 @@ hl.bind(mainMod .. " + " .. "V", hl.dsp.window.float())
 
 hl.bind(mainMod .. " + " .. "SPACE", hl.dsp.exec_cmd(menu))
 
-hl.bind(mainMod .. " + " .. "P", hl.dsp.window.pseudo())
+-- hl.bind(mainMod .. " + " .. "P", hl.dsp.window.pseudo())
 
 -- dwindle
 
@@ -357,8 +357,17 @@ hl.bind(mainMod .. " + ALT + 1", hl.dsp.dpms({ action = "toggle", monitor = "DP-
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("sketchlayer"))
 
 hl.bind(
+	mainMod .. " + P",
+	hl.dsp.exec_cmd(
+		'sh -c \'f="$HOME/Pictures/screenshot-$(date +%F-%H%M%S).png"; grim -g "$(slurp)" "$f" && echo -n "$f" | wl-copy\''
+	)
+)
+
+hl.bind(
 	mainMod .. " + SHIFT + P",
-	hl.dsp.exec_cmd("sh -c 'grim -g \"$(slurp)\" ~/Pictures/screenshot-$(date +%F-%H%M%S).png'")
+	hl.dsp.exec_cmd(
+		'sh -c \'f="$HOME/Pictures/screenshot-$(date +%F-%H%M%S).png"; grim -g "$(slurp)" "$f" && wl-copy < "$f"\''
+	)
 )
 
 -- Move focus with mainMod + arrow keys
