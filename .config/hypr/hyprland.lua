@@ -41,6 +41,16 @@ hl.workspace_rule({
 	default = true,
 })
 
+hl.window_rule({
+	name = "center-zenity-ollama-vision",
+	match = {
+		class = "^zenity$",
+		title = "^Ollama Vision.*",
+	},
+	float = true,
+	center = true,
+})
+
 --##################
 
 --## MY PROGRAMS ###
@@ -369,6 +379,9 @@ hl.bind(
 		'sh -c \'f="$HOME/Pictures/screenshot-$(date +%F-%H%M%S).png"; grim -g "$(slurp)" "$f" && wl-copy < "$f"\''
 	)
 )
+
+-- Ollama Vision Screenshot
+hl.bind(mainMod .. " + CTRL + SHIFT + P", hl.dsp.exec_cmd("/home/saltchicken/.config/hypr/scripts/viz/viz.sh"))
 
 -- Move focus with mainMod + arrow keys
 
