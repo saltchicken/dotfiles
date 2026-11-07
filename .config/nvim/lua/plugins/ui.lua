@@ -1,6 +1,6 @@
 return {
   { "nvim-lualine/lualine.nvim", enabled = false },
-  -- { "nvim-mini/mini.pairs", enabled = false },
+  { "nvim-mini/mini.pairs", enabled = false },
   {
     "folke/snacks.nvim",
     opts = {
