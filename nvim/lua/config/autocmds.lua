@@ -1,0 +1,32 @@
+-- Autocmds are automatically loaded on the VeryLazy event
+-- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
+--
+-- Add any additional autocmds here
+-- with `vim.api.nvim_create_autocmd`
+--
+-- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
+-- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+--
+vim.api.nvim_create_autocmd("TermOpen", {
+  pattern = "*ghci*", -- matches the tidal ghci terminal process
+  callback = function()
+    -- Hide the terminal window immediately after it opens
+    vim.cmd("hide")
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "mmn",
+  callback = function(args)
+    -- Start Neovim's native tree-sitter highlighting
+    vim.treesitter.start(args.buf, "mmn")
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "mmn",
+  callback = function(args)
+    vim.treesitter.start(args.buf, "mmn")
+    vim.bo[args.buf].commentstring = "// %s"
+  end,
+})
