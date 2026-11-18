@@ -20,7 +20,6 @@ return {
       end,
     },
   },
-  { "aliqyan-21/darkvoid.nvim" },
   {
     "LazyVim/LazyVim",
     opts = {
